@@ -29,11 +29,11 @@ export default function OurStoryPage() {
         <figure>
           <div className="blob-mask relative aspect-[4/3] overflow-hidden shadow-[var(--shadow-soft)]">
             <Image
-              src="/images/margherita-kitchen.jpg"
-              alt="Margherita cooking at the stove in her brick kitchen, wearing a green shirt and a patterned apron."
+              src="/images/figma/photo-margherita.png"
+              alt="Margherita, smiling in her kitchen as she cooks."
               fill
               sizes="(min-width: 768px) 32rem, 100vw"
-              className="object-cover"
+              className="object-contain"
               priority
             />
           </div>
@@ -47,8 +47,21 @@ export default function OurStoryPage() {
         <div className="prose-care page-wrap max-w-none py-16 text-lg md:py-20">
           <div className="max-w-3xl">
           <p>
-            My beautiful mother, Margherita, was diagnosed with dementia at 65.
-            Nothing prepares you for that news, or for the road that follows.
+            My beautiful mother Margherita, was diagnosed with dementia at 65.
+            Nothing can prepare you for this news or the arduous road ahead.
+          </p>
+          <p>
+            I became the person making calls, asking questions and speaking up
+            for my parents. I was also working and raising three young children.
+          </p>
+          <p>
+            I learned how hard it can be to find help that truly fits someone’s
+            life — especially in an overly complicated system that wasn’t
+            designed for them.
+          </p>
+          <p>
+            I started Si Care Solutions because I’ve been there and want to help
+            your family through it.
           </p>
           <p>
             Supporting my parents through their health was tireless, difficult

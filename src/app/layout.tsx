@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Aboreto, Great_Vibes, Inclusive_Sans } from "next/font/google";
+import { Aboreto, Inclusive_Sans } from "next/font/google";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { site } from "@/config/site";
@@ -19,13 +19,6 @@ const aboreto = Aboreto({
   display: "swap",
 });
 
-const greatVibes = Great_Vibes({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-great-vibes",
-  display: "swap",
-});
-
 export const metadata: Metadata = {
   title: {
     default: `${site.name} · Support at Home care management`,
@@ -42,7 +35,7 @@ export default function RootLayout({
   return (
     <html
       lang="en-AU"
-      className={`${inclusive.variable} ${aboreto.variable} ${greatVibes.variable}`}
+      className={`${inclusive.variable} ${aboreto.variable}`}
     >
       <body className="antialiased">
         <a className="skip-link" href="#main">

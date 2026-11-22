@@ -1,94 +1,82 @@
-"use client";
+/* eslint-disable @next/next/no-img-element */
+const quotes = {
+  priscilla: `I honestly can not thank you and your team (Teresa & Mary/Maria) enough, for all that you have done for mum. Your services were unmatched and client focus was impeccable. Mum and myself absolutely loved Teresa and Mary/Maria, they were both absolutely beautiful to mum and I will forever be greatful for their support as well as your support Carolyn. Your business model is fantastic and I only hope that it grows on bigger and you set an example for other businesses like yours to do better.
 
-import { useRef } from "react";
-import Image from "next/image";
-import { testimonials } from "@/content/testimonials";
-import { cn } from "@/lib/utils";
+Again thankyou for everything.
 
-const blobTones = [
-  "bg-paper text-purple",
-  "bg-mint text-purple",
-  "bg-deep text-cream",
-  "bg-lavender text-purple",
-];
+Priscilla (Reservoir)`,
+  cs: `I would like to thankyou both for arranging the fabulous care mum received whilst I was away.
+Mum, who for such a long time did not want any help, was so impressed the the ladies that she is has asked for this to be an ongoing service.
+
+CS (Airport West)`,
+  anna: `Firstly I would like to take this opportunity to thank you so much for all your support, advice, assistance and encouragement in particular with mum's ongoing health issues. The best decision M and I have made was to connect in with you and your team.
+
+Anna (Thornbury)`,
+};
 
 export function TestimonialStrip() {
-  const scroller = useRef<HTMLDivElement>(null);
-
-  function move(direction: number) {
-    const node = scroller.current;
-    if (!node) return;
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    node.scrollBy({
-      left: direction * Math.min(node.clientWidth * 0.8, 420),
-      behavior: reduced ? "auto" : "smooth",
-    });
-  }
-
   return (
-    <div>
-      <div className="bleed-start mb-4 flex justify-end gap-2 pr-8">
-        <button
-          type="button"
-          className="ui-text grid size-11 place-items-center rounded-full bg-purple text-lg text-cream hover:bg-nav"
-          onClick={() => move(-1)}
-          aria-label="Scroll kind words backward"
-        >
-          <span aria-hidden>←</span>
-        </button>
-        <button
-          type="button"
-          className="ui-text grid size-11 place-items-center rounded-full bg-purple text-lg text-cream hover:bg-nav"
-          onClick={() => move(1)}
-          aria-label="Scroll kind words forward"
-        >
-          <span aria-hidden>→</span>
-        </button>
-      </div>
-      <div
-        ref={scroller}
-        tabIndex={0}
-        aria-label="Kind words and messages from families"
-        className="testimonial-scroller bleed-start flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4 pr-8 focus-visible:outline-offset-8"
-      >
-        {testimonials.map((item, index) =>
-          item.type === "quote" ? (
-            <figure
-              key={item.id}
-              className={cn(
-                "flex min-h-[16rem] w-[18rem] shrink-0 snap-start flex-col justify-between rounded-tl-[2.5rem] rounded-tr-[4rem] rounded-br-[2.75rem] rounded-bl-[4rem] p-7 shadow-[var(--shadow-soft)] md:w-[22rem]",
-                blobTones[index % blobTones.length],
-              )}
-            >
-              <blockquote className="text-[1.05rem] leading-relaxed">
-                “{item.quote}”
-              </blockquote>
-              <figcaption className="mt-6 text-sm font-semibold">
-                {item.name}
-                <span className="font-normal opacity-80"> · {item.place}</span>
-              </figcaption>
-            </figure>
-          ) : (
-            <figure
-              key={item.id}
-              className="w-[15rem] shrink-0 snap-start rounded-tl-[2rem] rounded-tr-[3.25rem] rounded-br-[2rem] rounded-bl-[3.25rem] bg-paper p-3 shadow-[var(--shadow-soft)] md:w-[17rem]"
-            >
-              <div className="overflow-hidden rounded-[1.25rem] bg-lavender">
-                <Image
-                  src={item.src}
-                  alt={item.alt}
-                  width={item.width}
-                  height={item.height}
-                  className="h-auto w-full object-contain"
-                />
-              </div>
-              <figcaption className="px-2 py-3 text-sm font-bold text-nav">
-                {item.name}
-              </figcaption>
-            </figure>
-          ),
-        )}
-      </div>
+    <div
+      tabIndex={0}
+      aria-label="Kind words and messages from families"
+      className="testimonial-scroller flex items-center gap-8 overflow-x-auto px-6 pb-4 md:gap-[76px] md:px-[max(1.25rem,calc((100vw-1512px)/2))]"
+    >
+      <figure className="relative h-[365px] w-[385px] shrink-0">
+        <img
+          src="/images/figma/blob-testimonial-priscilla.svg"
+          alt=""
+          className="absolute inset-0 h-full w-full"
+        />
+        <blockquote className="absolute left-[74px] top-[72px] h-[222px] w-[218px] overflow-hidden text-center text-[12px] leading-[1.1] whitespace-pre-wrap text-purple">
+          {quotes.priscilla}
+        </blockquote>
+      </figure>
+
+      <figure className="h-[164px] w-[228px] shrink-0 overflow-hidden rounded-[8px] border-8 border-lime bg-white">
+        <img
+          src="/images/figma/testimonial-image-1.png"
+          alt="Text message saying thank you, and that Mum couldn’t have been happier after her first visit from Lyn."
+          className="h-full w-full object-cover"
+        />
+      </figure>
+
+      <figure className="relative h-[368px] w-[355px] shrink-0">
+        <img
+          src="/images/figma/blob-testimonial-cs.svg"
+          alt=""
+          className="absolute inset-0 h-full w-full"
+        />
+        <blockquote className="absolute left-[87px] top-[111px] h-[222px] w-[192px] overflow-hidden text-center text-[14px] leading-[1.1] whitespace-pre-wrap text-white">
+          {quotes.cs}
+        </blockquote>
+      </figure>
+
+      <figure className="h-[296px] w-[221px] shrink-0 overflow-hidden rounded-[8px] border-8 border-lilac bg-white">
+        <img
+          src="/images/figma/testimonial-image-2.png"
+          alt="Text message thanking Carolyn for sending Anita, who Mum was very happy with."
+          className="h-full w-full object-cover"
+        />
+      </figure>
+
+      <figure className="relative h-[299px] w-[330px] shrink-0">
+        <img
+          src="/images/figma/blob-testimonial-anna.svg"
+          alt=""
+          className="absolute inset-0 h-full w-full"
+        />
+        <blockquote className="absolute left-[69px] top-[63px] h-[222px] w-[192px] overflow-hidden text-center text-[14px] leading-[1.1] whitespace-pre-wrap text-white">
+          {quotes.anna}
+        </blockquote>
+      </figure>
+
+      <figure className="h-[169px] w-[297px] shrink-0 overflow-hidden rounded-[8px] border-8 border-purple bg-white">
+        <img
+          src="/images/figma/testimonial-image-3.png"
+          alt="Text message from Priscilla thanking Carolyn and her team."
+          className="h-full w-full object-cover"
+        />
+      </figure>
     </div>
   );
 }

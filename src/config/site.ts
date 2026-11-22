@@ -34,7 +34,7 @@ export const site = {
   /** Full lines. The Figma footer clips both of these. */
   insuredLine: "Fully Insured.",
   serviceArea:
-    "Care management for families across metropolitan Melbourne and surrounding suburbs.",
+    "Serving the CBD, northern, and eastern suburbs of Melbourne, Victoria.",
 
   /**
    * Design source of truth. Token values in src/design/tokens.css are interim

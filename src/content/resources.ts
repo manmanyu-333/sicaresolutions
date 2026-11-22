@@ -17,7 +17,7 @@ export type Resource = {
 export const resources: Resource[] = [
   {
     slug: "participant-contributions",
-    title: "Participant contributions under Support at Home",
+    title: "What are participant contributions under Support at Home?",
     summary:
       "A plain-language sketch of who pays what. The percentages are public, and they change. This note is a draft for Carolyn to correct.",
     draft: true,
@@ -181,7 +181,7 @@ export const resources: Resource[] = [
   },
   {
     slug: "want-to-work-in-aged-care",
-    title: "Want to work in aged care",
+    title: "Want to work in aged care?",
     summary:
       "Carolyn keeps a curated team. If you are an independent contractor, tell us about your work and the suburbs you cover.",
     draft: false,

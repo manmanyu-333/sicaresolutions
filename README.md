@@ -4,7 +4,7 @@ Marketing site for Si Care Solutions, Carolyn Chillura’s independent Support a
 
 The design source of truth is the Figma frame [Quests / node 98:936](https://www.figma.com/design/SVrqXpCw54YCBt3olzAPHv/Quests?node-id=98-936). Colours, type and spacing in `src/design/tokens.css` match that frame: cream `#FFFAF0`, lavender `#F9F3FF`, purple `#5C60A4`, nav-current `#3A467F`, lime `#8BC961`, mint `#DFF7CF`, lilac `#CEB7CE`, deep purple `#6750A4`, approach overlay `#3E406E` at 20%, dusty rose `#D898B4`. Headings, navigation and buttons use **Aboreto** (1.56px letter-spacing on nav and buttons, including “Let’s chat”). Body copy uses **Inclusive Sans** 400 and 700. The artboard is 1512px wide, the content column is 1192px, side padding is 160px, and the footer padding is 60px.
 
-The Figma export tarball was not on disk in this environment, so the script logo, underline and approach-blob paths in `public/images/figma/` are stand-in SVGs with the same filenames. Drop the exported files over them. Hero, approach-room and call-to-action photographs are still the named placeholders. Copy on the home page is the preview copy until the Figma text in `figma/SPECS.md` is applied; where they differ, Figma wins, except the contact rules below.
+Home-page copy, colours and assets follow the Figma V3 frame. The logo, underlines, blobs, hero collage, Margherita photograph, approach background, contact photograph and testimonial images are the exported files in `public/images/figma/`.
 
 Si Care coordinates care. It is not an approved Support at Home provider. The site does not claim otherwise.
 
@@ -50,18 +50,9 @@ Change these when the Figma values arrive. You should not have to hunt through p
 | Approach card blob | `public/images/figma/blob-card-approach.svg` (live text sits on top of it) |
 | Contact details, phones, email, ABN, booking link, “Fully Insured.” and the service-area line | `src/config/site.ts` |
 
-## Swap a placeholder photograph
+## Figma assets
 
-Placeholder images are plain SVG stand-ins. They are not stock photos of real people. Replace the file, or point the `src` at a new file, and keep the `alt` honest.
-
-| File | Used for |
-| --- | --- |
-| `public/images/placeholders/hero-portrait.svg` | Home hero, right-hand blob |
-| `public/images/placeholders/approach-room.svg` | Photograph behind Listen / Link / Look after. The overlay is `#3E406E` at 20% opacity. |
-| `public/images/placeholders/cta-window.svg` | “Let’s talk about your Margherita” panel |
-| `public/images/figma/si-logo.svg` | Not shipped yet. The nav uses a script “Si” until this file replaces `Logo.tsx`. |
-| `public/images/figma/squiggle.svg` | Stand-in underline. Same shape as the inline squiggle. |
-| `public/images/figma/blob-card-approach.svg` | Stand-in mint blob behind the Listen / Link / Look after text. |
+The home page uses the exported files in `public/images/figma/`: the Si logo, underlines, squiggles, blobs, hero collage, Margherita photograph, approach background, contact photograph, and the three testimonial screenshots. Replace a file in place to update the page.
 
 Real photographs already in the repo, taken from the current public site:
 
@@ -89,7 +80,6 @@ Items marked on the site itself as **DRAFT** or **placeholder**. Nothing here sh
 ### Needs Amanda
 
 - **Booking link.** `bookingHref` in `src/config/site.ts` is `"#"`. Wire it to the booking tool or a form. Every chat button uses that one value.
-- **Figma tokens and assets.** Replace `src/design/tokens.css`, the font loader, `Logo`, `Squiggle`, and the three placeholder SVGs with the export. Where Figma copy differs from this preview, Figma wins, except the contact rules below.
 - **Email.** The footer uses `connect@sicaresolutions.com.au`, Amanda’s choice. The live Weebly site still shows `info@sicare.com.au`.
 - **Phones.** `(03) 9917 7710` and `0490 017 903`. Do not use `0401 685 314`.
 - **Domain and hosting.** Undecided. `sicare.com.au` is still on the existing site.

@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" role="img" aria-label="Placeholder photograph of a kitchen window">
-  <rect width="900" height="700" fill="#F3E2D4"/>
-  <rect x="140" y="70" width="620" height="420" rx="20" fill="#FFFDF8"/>
-  <path d="M450 70v420M140 280h620" stroke="#E4D2C4" stroke-width="14"/>
-  <circle cx="300" cy="190" r="48" fill="#F6C86A"/>
-  <ellipse cx="620" cy="560" rx="90" ry="28" fill="#5C60A4" opacity="0.15"/>
-  <rect x="560" y="500" width="120" height="16" rx="6" fill="#C9856A"/>
-</svg>

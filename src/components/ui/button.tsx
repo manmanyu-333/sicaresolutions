@@ -8,16 +8,18 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        lime: "bg-lime text-lime-ink hover:bg-[#7eb456]",
+        lime: "border-b border-[rgba(68,68,29,0.15)] bg-lime text-white hover:bg-[#7eb456]",
         purple: "bg-purple text-cream hover:bg-nav",
         ghost:
-          "bg-transparent text-purple ring-1 ring-inset ring-purple hover:bg-lavender",
+          "border-2 border-purple bg-transparent text-purple hover:bg-lavender",
         cream: "bg-cream text-purple hover:bg-white",
+        blob: "h-auto border-0 bg-transparent p-0 text-white hover:bg-transparent",
       },
       size: {
-        default: "h-11 px-5 text-sm",
-        lg: "h-12 px-6 text-base",
-        sm: "h-9 px-4 text-sm",
+        default: "h-[53px] px-8 text-[18px]",
+        lg: "px-8 py-4 text-[18px]",
+        sm: "h-[53px] px-8 text-[18px]",
+        none: "h-auto p-0",
       },
     },
     defaultVariants: {

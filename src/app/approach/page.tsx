@@ -22,7 +22,7 @@ const pillars = [
   {
     id: "link",
     title: "Link",
-    lead: "Carolyn matches. She does not ask you to find a carer.",
+    lead: "I match the right carers and services to you, from a team I already know. I do not ask you to find a carer.",
     points: [
       "She introduces people from a team she already knows: support workers, nurses, allied health, cleaners, gardeners.",
       "This is not a directory, and it is not homework. Families are not left to interview strangers.",
