@@ -1,0 +1,217 @@
+@import "tailwindcss";
+@import "../design/tokens.css";
+
+@theme inline {
+  --color-cream: var(--cream);
+  --color-lavender: var(--lavender);
+  --color-purple: var(--purple);
+  --color-nav: var(--nav-current);
+  --color-lime: var(--lime);
+  --color-lime-ink: var(--lime-ink);
+  --color-mint: var(--mint);
+  --color-lilac: var(--lilac);
+  --color-deep: var(--deep-purple);
+  --color-overlay: var(--overlay);
+  --color-rose: var(--rose);
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --color-squiggle: var(--squiggle);
+  --font-sans: var(--font-inclusive), "Inclusive Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-aboreto), "Aboreto", "Times New Roman", serif;
+  --radius-pill: var(--radius-pill);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  overflow-x: clip;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html.motion .reveal.is-armed:not(.is-in) {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+  }
+
+  html.motion .reveal.is-in {
+    opacity: 1;
+    transform: none;
+    transition:
+      opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.motion .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-inclusive), "Inclusive Sans", ui-sans-serif, system-ui, sans-serif;
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+}
+
+.page-wrap {
+  width: 100%;
+  max-width: var(--artboard);
+  margin-inline: auto;
+  padding-inline: var(--pad-page);
+}
+
+.footer-wrap {
+  width: 100%;
+  max-width: var(--artboard);
+  margin-inline: auto;
+  padding-inline: var(--pad-footer);
+}
+
+.bleed-start {
+  padding-left: max(
+    var(--pad-page),
+    calc((100vw - var(--artboard)) / 2 + var(--pad-page))
+  );
+}
+
+.ui-text {
+  font-family: var(--font-aboreto), "Aboreto", serif;
+  font-weight: 400;
+  letter-spacing: var(--tracking-ui);
+}
+
+::selection {
+  background: var(--lime);
+  color: var(--lime-ink);
+}
+
+:focus-visible {
+  outline: 3px solid var(--purple);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -5rem;
+  z-index: 80;
+  border-radius: 999px;
+  background: var(--lime);
+  color: var(--lime-ink);
+  padding: 0.6rem 1rem;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.section {
+  padding-block: var(--section-y);
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-block: var(--section-y-lg);
+  }
+}
+
+.display {
+  font-family: var(--font-aboreto), "Aboreto", serif;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.blob-mask {
+  border-radius: 46% 54% 50% 50% / 42% 46% 54% 58%;
+}
+
+.approach-card {
+  background-image: url("/images/figma/blob-card-approach.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.squiggle {
+  display: block;
+  height: 0.7em;
+  width: 100%;
+  margin-top: 0.15em;
+  color: var(--squiggle);
+}
+
+.prose-care h2 {
+  margin-top: 2.25rem;
+  font-family: var(--font-aboreto), "Aboreto", serif;
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
+  color: var(--purple);
+  line-height: 1.15;
+}
+
+.prose-care h3 {
+  margin-top: 1.75rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--nav-current);
+}
+
+.prose-care p,
+.prose-care ul,
+.prose-care ol {
+  margin-top: 0.9rem;
+}
+
+.prose-care ul,
+.prose-care ol {
+  padding-left: 1.2rem;
+}
+
+.prose-care li + li {
+  margin-top: 0.4rem;
+}
+
+.prose-care a {
+  color: var(--nav-current);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.prose-care strong {
+  font-weight: 600;
+}
+
+.testimonial-scroller {
+  scrollbar-color: var(--purple) transparent;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  touch-action: pan-x pan-y;
+}
+
+.testimonial-scroller::-webkit-scrollbar {
+  height: 8px;
+}
+
+.testimonial-scroller::-webkit-scrollbar-thumb {
+  background: rgb(92 96 164 / 0.45);
+  border-radius: 999px;
+}

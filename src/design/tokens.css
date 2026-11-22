@@ -1,0 +1,60 @@
+/*
+  Si Care design tokens, from the Figma frame (node 98:936):
+  https://www.figma.com/design/SVrqXpCw54YCBt3olzAPHv/Quests?node-id=98-936
+
+  Fonts are loaded in src/app/layout.tsx:
+  Aboreto for headings, nav and buttons; Inclusive Sans 400/700 for body.
+  The script “Si” mark still uses Great Vibes until public/images/figma/si-logo.svg
+  from the Figma export replaces it.
+*/
+
+:root {
+  /* Colour */
+  --cream: #fffaf0;
+  --lavender: #f9f3ff;
+  --purple: #5c60a4;
+  --nav-current: #3a467f;
+  --lime: #8bc961;
+  --lime-ink: #1c2a12;
+  --mint: #dff7cf;
+  --lilac: #ceb7ce;
+  --deep-purple: #6750a4;
+  --overlay: #3e406e;
+  --rose: #d898b4;
+  --ink: #5c60a4;
+  --paper: #ffffff;
+  --squiggle: #d898b4;
+  --line: rgb(92 96 164 / 0.2);
+
+  /* Type */
+  --text-body: 1.0625rem;
+  --leading-body: 1.65;
+  --tracking-ui: 1.56px;
+  --tracking-display: 0.04em;
+
+  /* Layout: 1512 artboard, 1192 content, 160 side padding. Footer padding 60. */
+  --artboard: 1512px;
+  --page: 1192px;
+  --pad-page: 20px;
+  --pad-footer: 20px;
+  --section-y: 4.5rem;
+  --section-y-lg: 6.5rem;
+
+  /* Shape */
+  --radius-pill: 100px;
+  --shadow-soft: 0 18px 50px rgb(58 70 127 / 0.12);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --pad-page: 40px;
+    --pad-footer: 40px;
+  }
+}
+
+@media (min-width: 1512px) {
+  :root {
+    --pad-page: 160px;
+    --pad-footer: 60px;
+  }
+}
