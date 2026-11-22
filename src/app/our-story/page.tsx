@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { BookChatLink } from "@/components/BookChatLink";
+import { Reveal } from "@/components/motion/Reveal";
 
 export const metadata: Metadata = {
   title: "Our story",
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 
 export default function OurStoryPage() {
   return (
+    <Reveal>
     <article>
       <header className="section page-wrap grid items-center gap-10 md:grid-cols-[1.1fr_0.9fr]">
         <div>
@@ -126,5 +128,6 @@ export default function OurStoryPage() {
         </div>
       </div>
     </article>
+    </Reveal>
   );
 }

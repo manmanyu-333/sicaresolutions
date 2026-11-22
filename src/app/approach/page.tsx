@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BookChatLink } from "@/components/BookChatLink";
+import { Reveal } from "@/components/motion/Reveal";
 
 export const metadata: Metadata = {
   title: "Approach",
@@ -45,6 +46,7 @@ const pillars = [
 
 export default function ApproachPage() {
   return (
+    <Reveal>
     <article>
       <header className="section page-wrap">
         <div className="max-w-3xl">
@@ -109,5 +111,6 @@ export default function ApproachPage() {
         </div>
       </div>
     </article>
+    </Reveal>
   );
 }

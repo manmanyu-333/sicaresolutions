@@ -25,7 +25,15 @@ function isCurrent(pathname: string, href: string) {
   return current === href || current.startsWith(`${href}/`);
 }
 
-function NavLinks({ pathname, onNavigate }: { pathname: string; onNavigate?: () => void }) {
+function NavLinks({
+  pathname,
+  onNavigate,
+  menu = false,
+}: {
+  pathname: string;
+  onNavigate?: () => void;
+  menu?: boolean;
+}) {
   return (
     <>
       {links.map((item) => {
@@ -37,7 +45,8 @@ function NavLinks({ pathname, onNavigate }: { pathname: string; onNavigate?: () 
             aria-current={current ? "page" : undefined}
             onClick={onNavigate}
             className={cn(
-              "ui-text inline-flex h-[37px] items-center whitespace-nowrap rounded-[24px] px-4 text-[16px] uppercase text-white",
+              "ui-text inline-flex items-center whitespace-nowrap rounded-[24px] px-4 text-[16px] uppercase text-white",
+              menu ? "min-h-11 w-full" : "h-[37px]",
               current && "bg-[rgba(255,250,240,0.4)] text-nav",
             )}
           >
@@ -107,7 +116,7 @@ export function SiteHeader() {
       {open ? (
         <nav id="mobile-nav" aria-label="Mobile" className="page-wrap mt-3 lg:hidden">
           <div className="flex flex-col rounded-3xl bg-purple p-3">
-            <NavLinks pathname={pathname} onNavigate={() => setOpen(false)} />
+            <NavLinks menu pathname={pathname} onNavigate={() => setOpen(false)} />
           </div>
         </nav>
       ) : null}

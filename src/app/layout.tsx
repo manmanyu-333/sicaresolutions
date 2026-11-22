@@ -35,7 +35,7 @@ export default function RootLayout({
   return (
     <html
       lang="en-AU"
-      className={`${inclusive.variable} ${aboreto.variable}`}
+      className={`${inclusive.variable} ${aboreto.variable} motion`}
     >
       <body className="antialiased">
         <a className="skip-link" href="#main">

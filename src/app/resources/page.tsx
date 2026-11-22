@@ -5,6 +5,7 @@ import { CareAccordion } from "@/components/ui/accordion";
 import { faqs } from "@/content/faq";
 import { resources } from "@/content/resources";
 import { site } from "@/config/site";
+import { Reveal } from "@/components/motion/Reveal";
 
 export const metadata: Metadata = {
   title: "Resources and FAQ",
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
 
 export default function ResourcesPage() {
   return (
+    <Reveal>
     <article>
       <header className="section page-wrap">
         <div className="max-w-3xl">
@@ -97,5 +99,6 @@ export default function ResourcesPage() {
         </div>
       </section>
     </article>
+    </Reveal>
   );
 }

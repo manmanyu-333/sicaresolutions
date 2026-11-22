@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DraftNotice } from "@/components/DraftNotice";
 import { site } from "@/config/site";
+import { Reveal } from "@/components/motion/Reveal";
 
 export const metadata: Metadata = {
   title: "Privacy policy",
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
+    <Reveal>
     <article className="section page-wrap">
       <div className="max-w-3xl">
       <p className="text-sm font-semibold uppercase tracking-[0.18em] text-purple">
@@ -102,5 +104,6 @@ export default function PrivacyPage() {
       </div>
       </div>
     </article>
+    </Reveal>
   );
 }

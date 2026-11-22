@@ -6,6 +6,7 @@ import { DraftNotice } from "@/components/DraftNotice";
 import { ResourceBody } from "@/components/ResourceBody";
 import { getResource, resources } from "@/content/resources";
 import { site } from "@/config/site";
+import { Reveal } from "@/components/motion/Reveal";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -31,6 +32,7 @@ export default async function ResourcePage({ params }: Props) {
   if (!resource) notFound();
 
   return (
+    <Reveal>
     <article className="section page-wrap">
       <div className="max-w-3xl">
       <p className="text-sm font-semibold uppercase tracking-[0.18em] text-purple">
@@ -60,5 +62,6 @@ export default async function ResourcePage({ params }: Props) {
       </div>
       </div>
     </article>
+    </Reveal>
   );
 }

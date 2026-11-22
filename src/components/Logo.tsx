@@ -6,7 +6,10 @@ export function Logo({ className }: { className?: string }) {
   return (
     <Link
       href="/"
-      className={cn("inline-flex shrink-0 items-center", className)}
+      className={cn(
+        "inline-flex shrink-0 items-center max-lg:min-h-11 max-lg:min-w-11 max-lg:justify-center",
+        className,
+      )}
       aria-label="Si Care Solutions, home"
     >
       <Image
