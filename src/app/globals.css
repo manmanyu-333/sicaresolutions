@@ -201,18 +201,6 @@ body {
   font-weight: 600;
 }
 
-.nav-links-clip,
-.nav-cta-clip {
-  display: grid;
-  grid-template-columns: 1fr;
-}
-
-.nav-links-clip > div,
-.nav-cta-clip > div {
-  min-width: 0;
-  overflow: hidden;
-}
-
 .ticker-track {
   display: flex;
   width: max-content;
@@ -288,7 +276,7 @@ body {
   }
 
   .ticker-track {
-    animation: ticker 75s linear infinite;
+    animation: ticker 120s linear infinite;
   }
 
   .ticker:hover .ticker-track,
@@ -329,21 +317,6 @@ body {
   .play-draw[data-visible="true"] .draw-line {
     transform-origin: left center;
     animation: draw-x 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.25s both;
-  }
-}
-
-@media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
-  .nav-links-clip {
-    animation: clip-open 0.95s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
-  }
-
-  .nav-cta-clip {
-    animation: clip-open 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.32s both;
-  }
-
-  .nav-links-inner,
-  .nav-cta-clip > div > div {
-    animation: nav-fade 0.45s ease 0.5s both;
   }
 }
 
@@ -448,20 +421,31 @@ body {
   }
 }
 
-@keyframes clip-open {
-  from {
-    grid-template-columns: 0fr;
-  }
-  to {
-    grid-template-columns: 1fr;
+.hero-title {
+  font-size: clamp(1.15rem, 5.35vw, 1.7rem);
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: clamp(2rem, 4.2vw, 3rem);
   }
 }
 
-@keyframes nav-fade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
+.margherita-frame {
+  container-type: inline-size;
+}
+
+.margherita-caption {
+  font-size: clamp(12px, 3.15cqi, 16px);
+  line-height: 1.45;
+}
+
+.margherita-close {
+  margin-top: 4.5rem;
+}
+
+@media (min-width: 768px) {
+  .margherita-close {
+    margin-top: 5.5rem;
   }
 }

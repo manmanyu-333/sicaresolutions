@@ -103,35 +103,23 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 bg-cream/90 pt-6 backdrop-blur-sm md:pt-8">
       <div className="page-wrap flex justify-center">
-        <div className="nav-cluster hidden items-center lg:flex">
+        <div className="hidden items-center gap-[9px] lg:flex">
           <nav
             aria-label="Primary"
-            className="nav-reveal flex h-[53px] items-center rounded-full border-b border-[rgba(68,68,29,0.15)] bg-purple"
+            className="flex h-[53px] items-center gap-12 rounded-full border-b border-[rgba(68,68,29,0.15)] bg-purple pl-5 pr-6"
           >
-            <div className="grid aspect-square h-full shrink-0 place-items-center">
-              <Logo />
-            </div>
-            <div className="nav-links-clip">
-              <div>
-                <div className="nav-links-inner flex items-center gap-4 pr-6">
-                  <NavLinks
-                    active={active}
-                    onNavigate={(id) => {
-                      setActive(id);
-                      setOpen(false);
-                    }}
-                  />
-                </div>
-              </div>
+            <Logo />
+            <div className="flex items-center gap-4">
+              <NavLinks
+                active={active}
+                onNavigate={(id) => {
+                  setActive(id);
+                  setOpen(false);
+                }}
+              />
             </div>
           </nav>
-          <div className="nav-cta-clip">
-            <div>
-              <div className="pl-[9px]">
-                <BookChatLink size="sm">Book a chat</BookChatLink>
-              </div>
-            </div>
-          </div>
+          <BookChatLink size="sm">Book a chat</BookChatLink>
         </div>
         <div className="flex w-full items-center justify-between gap-3 lg:hidden">
           <div className="grid size-11 place-items-center rounded-full bg-purple">

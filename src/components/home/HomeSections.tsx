@@ -48,22 +48,22 @@ export function HomeSections() {
   return (
     <>
       <section id="who-we-are" className="scroll-mt-28 bg-cream pb-16 pt-[52px] md:pb-[120px] md:pt-[83px]">
-        <div className="page-wrap grid items-center gap-10 lg:grid-cols-[minmax(0,647px)_minmax(280px,513px)] lg:justify-between lg:gap-8">
+        <div className="page-wrap grid items-center gap-10 min-[1200px]:grid-cols-[minmax(0,647px)_minmax(280px,513px)] min-[1200px]:justify-between min-[1200px]:gap-8">
           <div className="max-w-[647px]">
-            <h1 className="display text-[clamp(2rem,4.4vw,48px)] text-purple">
+            <h1 className="hero-title display text-purple">
               <span className="block">Independent</span>
               <span className="block">Care Management</span>
-              <span className="type-line block">
+              <span className="type-line block whitespace-nowrap">
                 <Typed text={typedLead} start={0} />
                 <span className="relative inline-block">
                   <Typed text={typedLove} start={typedLead.length} />
-                  <span className="pointer-events-none absolute -bottom-1 left-0 inline-block w-[9.2rem] -rotate-[2deg]">
+                  <span className="pointer-events-none absolute -bottom-1 left-0 inline-block w-full -rotate-[2deg]">
                     <Image
                       src="/images/figma/hero-underline-love.svg"
                       alt=""
                       width={141}
                       height={10}
-                      className="hero-underline block h-auto w-full max-w-none"
+                      className="hero-underline block h-auto w-full"
                     />
                   </span>
                 </span>
@@ -92,7 +92,7 @@ export function HomeSections() {
               </a>
             </div>
           </div>
-          <div className="arrive-on-load art relative mx-auto aspect-[513/517] w-full max-w-[513px]">
+          <div className="arrive-on-load art relative mx-auto aspect-[513/517] w-full max-w-[420px] lg:max-w-[513px]">
             <Parallax speed={0.07} className="relative h-full w-full">
               <Image
                 src="/images/figma/hero-photo-collage@2x.png"
@@ -115,36 +115,36 @@ export function HomeSections() {
         </div>
       </section>
 
-      <section id="our-story" className="scroll-mt-28 bg-lavender px-0 py-16 md:py-20">
+      <section id="our-story" className="scroll-mt-28 bg-lavender px-0 pt-24 pb-28 md:pt-36 md:pb-36">
         <div className="page-wrap">
           <Reveal>
             <h2 className="display text-center text-[clamp(2rem,4vw,48px)] text-purple">
               Everybody has a Margherita.
             </h2>
           </Reveal>
-          <div className="mt-8 grid items-start gap-10 lg:mt-8 lg:grid-cols-[minmax(0,552px)_minmax(0,1fr)] lg:gap-[60px]">
-            <div className="art mx-auto grid w-full max-w-[552px] grid-cols-1 items-start gap-4 sm:grid-cols-[9.5rem_minmax(0,1fr)] sm:gap-x-3">
-              <div className="relative z-10 flex flex-wrap items-end gap-x-4 gap-y-2 sm:block sm:pt-8">
-                <p className="max-w-[11rem] text-[16px] leading-[1.7] text-purple sm:max-w-[9.5rem]">
-                  Margherita creating magic in her kitchen
-                </p>
-                <span className="mb-1 inline-block shrink-0 -rotate-[16deg] sm:mb-0 sm:ml-1 sm:mt-8">
-                  <img
-                    src="/images/figma/squiggle-kitchen.svg"
-                    alt=""
-                    width={114}
-                    height={32}
-                    className="art-shape w-[4.75rem] max-w-full sm:w-[5.75rem]"
-                  />
-                </span>
+          <div className="mt-10 grid items-center gap-10 lg:mt-12 lg:grid-cols-[minmax(0,552px)_minmax(0,1fr)] lg:gap-[60px]">
+            <div className="margherita-frame art relative mx-auto w-full max-w-[620px]">
+              <div className="relative ml-[22%] w-[78%]">
+                <Image
+                  src="/images/figma/photo-margherita.png"
+                  alt="Margherita, smiling in her kitchen as she cooks."
+                  width={537}
+                  height={517}
+                  className="h-auto w-full"
+                />
               </div>
-              <Image
-                src="/images/figma/photo-margherita.png"
-                alt="Margherita, smiling in her kitchen as she cooks."
-                width={537}
-                height={517}
-                className="h-auto w-full"
-              />
+              <p className="margherita-caption absolute left-[1%] top-[1%] z-10 w-[32%] text-purple">
+                Margherita creating magic in her kitchen
+              </p>
+              <span className="pointer-events-none absolute left-0 top-[28%] z-10 w-[27%] origin-[92%_30%] -rotate-[18deg]">
+                <img
+                  src="/images/figma/squiggle-kitchen.svg"
+                  alt=""
+                  width={114}
+                  height={32}
+                  className="art-shape h-auto w-full"
+                />
+              </span>
             </div>
             <Reveal delay={160} className="space-y-4 text-[20px] leading-[1.7] text-purple">
               <p>
@@ -165,7 +165,7 @@ export function HomeSections() {
             </Reveal>
           </div>
           <Reveal delay={80}>
-            <p className="display mx-auto mt-12 max-w-[920px] text-center text-[clamp(1.5rem,2.4vw,32px)] text-purple">
+            <p className="margherita-close display mx-auto max-w-[920px] text-center text-[clamp(1.5rem,2.4vw,32px)] text-purple">
               I started Si Care Solutions because I’ve been there and want to help
               your family through it.
             </p>
@@ -210,10 +210,10 @@ export function HomeSections() {
             {approachCards.map((card, index) => (
               <li
                 key={card.title}
-                className="stagger-item"
+                className="stagger-item shrink-0"
                 style={{ "--i": index } as CSSProperties}
               >
-                <div className="stagger-rise relative h-[233px] w-[min(253px,100%)] sm:w-[253px]">
+                <div className="stagger-rise relative h-[15rem] w-[15rem] max-w-[78vw] shrink-0">
                   <img
                     src="/images/figma/blob-card-approach.svg"
                     alt=""
@@ -236,16 +236,17 @@ export function HomeSections() {
                   <BookChatLink
                     variant="blob"
                     size="none"
-                    className="book-blob relative grid h-[233px] w-[min(253px,100%)] place-items-center sm:w-[253px]"
+                    className="book-blob relative grid aspect-square w-[15rem] max-w-[72vw] shrink-0 place-items-center"
                     aria-label="Book a chat"
                   >
-                    <img
-                      src="/images/figma/blob-book-a-chat.svg"
-                      alt=""
-                      className="book-blob-shape absolute inset-0 h-full w-full"
+                    <span
+                      aria-hidden
+                      className="book-blob-shape absolute inset-[7%] rounded-full bg-lime"
                     />
-                    <span className="relative z-10 max-w-[8rem] text-center font-display text-[28px] leading-[1.1] text-white sm:text-[32px]">
-                      Book a chat
+                    <span className="relative z-10 w-[62%] text-center font-display text-[clamp(1.25rem,3.4vw,1.7rem)] leading-[1.05] tracking-normal text-white">
+                      Book a
+                      <br />
+                      chat
                     </span>
                   </BookChatLink>
                 </div>
@@ -285,9 +286,9 @@ export function HomeSections() {
         </div>
       </section>
 
-      <section className="bg-lavender py-16 md:py-[120px]">
+      <section id="lets-talk" className="bg-lavender py-16 md:py-[120px]">
         <WhenVisible className="play-slide play-draw page-wrap grid items-center gap-10 lg:grid-cols-[535px_minmax(0,1fr)] lg:gap-10">
-          <div className="art relative mx-auto h-[420px] w-full max-w-[535px] overflow-hidden sm:h-[471px] sm:overflow-visible">
+          <div className="art relative mx-auto aspect-[535/471] w-full max-w-[535px]">
             <div className="slide-piece absolute right-0 top-0 h-full w-[53%]" style={{ "--d": "0.05s" } as CSSProperties}>
               <Parallax speed={0.05} className="h-full w-full">
                 <div className="h-full w-full origin-center rotate-180 -scale-y-100">
@@ -299,7 +300,7 @@ export function HomeSections() {
                 </div>
               </Parallax>
             </div>
-            <div className="slide-piece absolute left-[10px] top-0 z-10 w-[80%] max-w-[425px]" style={{ "--d": "0.16s" } as CSSProperties}>
+            <div className="slide-piece absolute left-[2%] top-0 z-10 w-[80%]" style={{ "--d": "0.16s" } as CSSProperties}>
               <Parallax speed={0.09} className="w-full">
                 <img
                   src="/images/figma/photo-contact-care.png"
@@ -308,7 +309,7 @@ export function HomeSections() {
                 />
               </Parallax>
             </div>
-            <div className="slide-piece absolute bottom-6 left-0 w-[74%]" style={{ "--d": "0.28s" } as CSSProperties}>
+            <div className="slide-piece absolute bottom-0 left-0 w-[72%]" style={{ "--d": "0.28s" } as CSSProperties}>
               <Parallax speed={0.04} className="w-full">
                 <div className="-rotate-[6deg]">
                   <img
@@ -331,7 +332,7 @@ export function HomeSections() {
                   alt=""
                   width={476}
                   height={18}
-                  className="draw-line pointer-events-none absolute -bottom-2 left-0 w-full max-w-[476px]"
+                  className="draw-line pointer-events-none absolute top-[100%] left-[0.35em] w-[calc(100%-0.1em)] max-w-[476px]"
                 />
               </span>
             </h2>
