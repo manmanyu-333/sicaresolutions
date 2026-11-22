@@ -33,8 +33,7 @@ export const site = {
 
   /** Full lines. The Figma footer clips both of these. */
   insuredLine: "Fully Insured.",
-  serviceArea:
-    "Serving the CBD, northern, and eastern suburbs of Melbourne, Victoria.",
+  serviceArea: "Serving families in Melbourne, Victoria",
 
   /**
    * Design source of truth. Token values in src/design/tokens.css are interim
@@ -44,8 +43,19 @@ export const site = {
     "https://www.figma.com/design/SVrqXpCw54YCBt3olzAPHv/Quests?node-id=98-936",
 } as const;
 
+/** In-page sections. Old paths redirect here. Privacy and Terms stay separate. */
 export const nav = [
-  { href: "/our-story", label: "Our story" },
-  { href: "/approach", label: "Approach" },
-  { href: "/resources", label: "Resources" },
+  { href: "/#our-story", id: "our-story", label: "Our story" },
+  { href: "/#who-we-are", id: "who-we-are", label: "Who we are" },
+  { href: "/#approach", id: "approach", label: "Approach" },
+  { href: "/#resources", id: "resources", label: "Resources" },
+] as const;
+
+export const footerNav = [
+  { href: "/#who-we-are", label: "Home" },
+  { href: "/#our-story", label: "Our story" },
+  { href: "/#approach", label: "Approach" },
+  { href: "/#resources", label: "Resources" },
+  { href: "/privacy", label: "Privacy Policy" },
+  { href: "/terms", label: "Terms and Conditions" },
 ] as const;

@@ -34,20 +34,6 @@ export function Reveal({ children, className, delay = 0, as: Tag = "div" }: Prop
 
     node.classList.add("is-armed");
     const show = () => node.classList.add("is-in");
-    const scroller = node.closest(".testimonial-scroller");
-    if (scroller) {
-      const stripObserver = new IntersectionObserver(
-        (entries) => {
-          if (entries.some((entry) => entry.isIntersecting)) {
-            show();
-            stripObserver.disconnect();
-          }
-        },
-        { threshold: 0.05 },
-      );
-      stripObserver.observe(scroller);
-      return () => stripObserver.disconnect();
-    }
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries.some((entry) => entry.isIntersecting)) {

@@ -1,33 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
-import { site } from "@/config/site";
-
-const footerLinks = [
-  { href: "/", label: "Home" },
-  { href: "/our-story", label: "Our story" },
-  { href: "/approach", label: "Approach" },
-  { href: "/resources", label: "Resources" },
-  { href: "/privacy", label: "Privacy Policy" },
-  { href: "/terms", label: "Terms and Conditions" },
-];
+import { SectionLink } from "@/components/SectionLink";
+import { footerNav, site } from "@/config/site";
 
 export function SiteFooter() {
   return (
     <footer className="bg-purple text-cream">
       <div className="footer-wrap flex flex-col gap-10 pb-[60px] pt-[72px] md:flex-row md:items-start md:justify-between">
         <div className="max-w-[460px]">
-          <div className="flex items-center gap-3">
-            <Image
-              src="/images/figma/si-logo.svg"
-              alt=""
-              width={40}
-              height={35}
-              className="h-[34px] w-[40px]"
-            />
-            <p className="font-display text-[clamp(22px,6.5vw,36px)] leading-[1.15] text-cream">
-              Si Care Solutions
-            </p>
-          </div>
+          <Image
+            src="/images/figma/si-logo.svg"
+            alt="Si Care Solutions"
+            width={40}
+            height={35}
+            className="h-[34px] w-[40px]"
+          />
           <div className="mt-6 space-y-0 text-[18px] leading-[1.75] text-white/65 sm:text-[20px] [overflow-wrap:anywhere]">
             <p>ABN: {site.abn ?? site.abnPlaceholder}</p>
             <p>
@@ -48,11 +35,21 @@ export function SiteFooter() {
         </div>
         <nav aria-label="Footer" className="md:text-right">
           <ul className="flex flex-col gap-[14px] text-[20px] leading-none text-cream">
-            {footerLinks.map((item) => (
+            {footerNav.map((item) => (
               <li key={item.href}>
-                <Link className="inline-flex min-h-11 items-center hover:underline md:min-h-0" href={item.href}>
-                  {item.label}
-                </Link>
+                {item.href.startsWith("/#") ? (
+                  <SectionLink
+                    href={item.href}
+                    sectionId={item.href.slice(2)}
+                    className="inline-flex min-h-11 items-center hover:underline md:min-h-0"
+                  >
+                    {item.label}
+                  </SectionLink>
+                ) : (
+                  <Link className="inline-flex min-h-11 items-center hover:underline md:min-h-0" href={item.href}>
+                    {item.label}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
