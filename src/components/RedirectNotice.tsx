@@ -23,7 +23,7 @@ export function RedirectNotice({
 }) {
   const fallback = hash === "faq" || !KNOWN.has(hash) ? "resources" : hash;
   const url = `/#${fallback}`;
-  const script = `(()=>{var known=${JSON.stringify([...KNOWN])};var alias={faq:"resources"};var current=(location.hash||"").replace(/^#/,"");var next=alias[current]||current;if(known.indexOf(next)<0) next=${JSON.stringify(fallback)};location.replace("/#"+next);})()`;
+  const script = `(()=>{var known=${JSON.stringify([...KNOWN])};var alias={faq:"resources","no-home-care-package":"how-to-get-a-home-care-package","participant-contributions":"how-to-get-a-home-care-package"};var current=(location.hash||"").replace(/^#/,"");var next=alias[current]||current;if(known.indexOf(next)<0) next=${JSON.stringify(fallback)};location.replace("/#"+next);})()`;
 
   return (
     <article className="section page-wrap">

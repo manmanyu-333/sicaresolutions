@@ -7,6 +7,8 @@ type Props = {
   children: ReactNode;
   className?: string;
   as?: "div" | "ul" | "section";
+  /** How much of the block must be on screen before it plays. */
+  threshold?: number;
 };
 
 /**
@@ -14,7 +16,12 @@ type Props = {
  * Content stays visible if motion is reduced or JavaScript never runs.
  * CSS decides what the mark does (stagger, slide, underline).
  */
-export function WhenVisible({ children, className, as: Tag = "div" }: Props) {
+export function WhenVisible({
+  children,
+  className,
+  as: Tag = "div",
+  threshold = 0.2,
+}: Props) {
   const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -31,7 +38,8 @@ export function WhenVisible({ children, className, as: Tag = "div" }: Props) {
     };
 
     const rect = node.getBoundingClientRect();
-    const already = rect.top < window.innerHeight * 0.84 && rect.bottom > 40;
+    const visibleHeight = Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
+    const already = visibleHeight > rect.height * threshold && rect.top < window.innerHeight * 0.9;
     if (already) {
       show();
       return;
@@ -45,11 +53,11 @@ export function WhenVisible({ children, className, as: Tag = "div" }: Props) {
           observer.disconnect();
         }
       },
-      { threshold: 0.12, rootMargin: "0px 0px -6% 0px" },
+      { threshold, rootMargin: "0px 0px -8% 0px" },
     );
     observer.observe(node);
     return () => observer.disconnect();
-  }, []);
+  }, [threshold]);
 
   return (
     <Tag ref={ref as never} className={cn("when-visible", className)}>

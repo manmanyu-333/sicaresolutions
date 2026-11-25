@@ -44,7 +44,7 @@ const cards: Card[] = [
   },
   {
     kind: "quote",
-    text: "I would like to thankyou both for arranging the fabulous care mum received whilst I was away. Mum, who for such a long time did not want any help, was so impressed the the ladies that she is has asked for this to be an ongoing service.",
+    text: "I would like to thankyou both for arranging the fabulous care mum received whilst I was away. … she is has asked for this to be an ongoing service.",
     name: "CS (Airport West)",
   },
   {
@@ -56,7 +56,7 @@ const cards: Card[] = [
   },
   {
     kind: "quote",
-    text: "Firstly I would like to take this opportunity to thank you so much for all your support, advice, assistance and encouragement in particular with mum's ongoing health issues. The best decision M and I have made was to connect in with you and your team.",
+    text: "Firstly I would like to take this opportunity to thank you so much for all your support … The best decision M and I have made was to connect in with you and your team.",
     name: "Anna (Thornbury)",
   },
   {
@@ -80,7 +80,7 @@ const cards: Card[] = [
   },
   {
     kind: "quote",
-    text: "We would like to take the opportunity to thank you for your personalised service and the calibre of Carers provided to Mum over the past couple of years. We have no hesitation in recommending Si Care Solutions to a family looking to have home care.",
+    text: "We would like to thank you for your personalised service and the calibre of Carers provided to Mum … We have no hesitation in recommending Si Care Solutions …",
     name: "Mary (Rosanna)",
   },
   {
@@ -92,7 +92,7 @@ const cards: Card[] = [
   },
   {
     kind: "quote",
-    text: "I just wanted to let you know that you have sourced an amazing team of carer's. Everyone of them goes above and beyond … Keep doing what you are doing because this work changes peoples lives.",
+    text: "I just wanted to let you know that you have sourced an amazing team of carer's. Everyone of them goes above and beyond …",
     name: "Nancy (Flemington)",
   },
   {
@@ -114,7 +114,7 @@ const cards: Card[] = [
   },
   {
     kind: "quote",
-    text: "I would like to take this opportunity to thank the team at Si Solutions for the absolute great support provided. My dad is extremely happy and it has been a huge relief to the family.",
+    text: "I would like to take this opportunity to thank the team at Si Solutions for the absolute great support provided. My dad is extremely happy …",
     name: "Melina (Thomastown)",
   },
   {
@@ -131,7 +131,7 @@ const cards: Card[] = [
 
 function QuoteBlob({ text, name, color, shape }: { text: string; name: string; color: string; shape: string }) {
   return (
-    <figure className="relative h-[300px] w-[min(330px,76vw)] shrink-0">
+    <figure className="relative grid h-[440px] w-[min(340px,92vw)] shrink-0 place-items-center">
       <div
         aria-hidden
         className="absolute inset-0"
@@ -145,9 +145,9 @@ function QuoteBlob({ text, name, color, shape }: { text: string; name: string; c
           maskSize: "100% 100%",
         }}
       />
-      <blockquote className="absolute inset-[18%] flex flex-col items-center justify-center overflow-hidden text-center text-[13px] leading-[1.3] text-white">
+      <blockquote className="relative z-10 flex w-[50%] flex-col items-center justify-center text-center text-[16px] leading-[1.5] text-white">
         <p>{text}</p>
-        <footer className="mt-3">{name}</footer>
+        <footer className="mt-3 text-[16px] leading-[1.4]">{name}</footer>
       </blockquote>
     </figure>
   );
@@ -156,10 +156,10 @@ function QuoteBlob({ text, name, color, shape }: { text: string; name: string; c
 function MessageCard({ text, name, color }: { text: string; name: string; color: string }) {
   return (
     <figure
-      className="w-[min(240px,68vw)] shrink-0 rounded-[8px] border-8 bg-white px-4 py-3 text-left"
+      className="grid min-h-[10rem] w-[min(250px,78vw)] shrink-0 place-items-center rounded-[8px] border-8 bg-white px-5 py-5 text-center"
       style={{ borderColor: color }}
     >
-      <blockquote className="text-[15px] leading-[1.45] text-purple">
+      <blockquote className="text-[16px] leading-[1.5] text-purple">
         <p>{text}</p>
         <footer className="mt-2 font-bold">{name}</footer>
       </blockquote>

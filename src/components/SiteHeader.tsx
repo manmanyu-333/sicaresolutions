@@ -126,7 +126,7 @@ export function SiteHeader() {
             <Logo />
           </div>
           <div className="flex items-center gap-2">
-            <BookChatLink size="sm" className="h-11 px-4 text-[14px]">
+            <BookChatLink size="sm" className="h-11 px-4 text-[16px]">
               Book a chat
             </BookChatLink>
             <button
